@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.OrdersDetailsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="86dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="15dp">
+
+        <ImageView
+            android:id="@+id/iconBack"
+            android:layout_width="52dp"
+            android:layout_height="76dp"
+            android:paddingStart="15dp"
+            android:src="@drawable/icon_back" />
+
+        <TextView
+            android:id="@+id/txtOrdersDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="10"
+            android:fontFamily="@font/irishgrover_regular"
+            android:text="Orders Details"
+            android:textAlignment="center"
+            android:textSize="35sp" />
+    </LinearLayout>
+    
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Orders Info"
+        android:fontFamily="@font/irishgrover_regular"
+        android:textSize="30sp"
+        android:layout_margin="10dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="10dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:fontFamily="@font/inter_font"
+            android:text="Name Receiver: "
+            />
+
+        <TextView
+            android:id="@+id/txtNameReceiver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="Name Receiver: "
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="10dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:fontFamily="@font/inter_font"
+            android:text="Phone Receiver: "
+            />
+
+        <TextView
+            android:id="@+id/txtPhoneReceiver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="Address: "
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginStart="30dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:fontFamily="@font/inter_font"
+            android:text="Address : "
+            />
+
+        <TextView
+            android:id="@+id/txtAddressReceiver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="Address "
+            />
+    </LinearLayout>
+    
+    <ListView
+        android:id="@+id/lv_ordersDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:dividerHeight="2dp"
+        android:layout_marginTop="20dp"
+        android:divider="#ccc"/>
+</LinearLayout>

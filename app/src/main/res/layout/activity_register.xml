@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/back"
+    tools:context=".activity.RegisterActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SnackSnap"
+        android:fontFamily="@font/irish_font"
+        android:textSize="50sp"
+        android:layout_marginTop="115dp"
+        android:textColor="@color/black"
+        android:gravity="center"
+        />
+
+    <EditText
+        android:id="@+id/edtEmail"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:hint="Email"
+        android:layout_marginTop="46dp"
+        android:textSize="27sp"/>
+
+    <EditText
+        android:id="@+id/edtName"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:hint="Full Name"
+        android:layout_marginTop="46dp"
+        android:textSize="27sp"/>
+
+    <EditText
+        android:id="@+id/edtPhone"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:hint="Phone Number"
+        android:layout_marginTop="46dp"
+        android:textSize="27sp"/>
+
+
+
+    <EditText
+        android:id="@+id/edtPassword"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:layout_marginTop="50dp"
+        android:textSize="27sp"/>
+
+    <EditText
+        android:id="@+id/edtRepeat"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:layout_gravity="center"
+        android:hint="Repeat Password"
+        android:layout_marginTop="46dp"
+        android:textSize="27sp"/>
+
+    <Button
+        android:id="@+id/btnRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:background="@drawable/custom_button"
+        app:backgroundTint="@null"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center"
+        android:textSize="30sp"
+        android:fontFamily="@font/irish_font"/>
+
+
+</LinearLayout>

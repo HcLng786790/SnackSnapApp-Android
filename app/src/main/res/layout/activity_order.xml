@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.OrderActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="86dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="15dp">
+
+        <ImageView
+            android:id="@+id/iconBack"
+            android:layout_width="52dp"
+            android:layout_height="76dp"
+            android:paddingStart="15dp"
+            android:src="@drawable/icon_back" />
+
+        <TextView
+            android:id="@+id/txtTile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="10"
+            android:fontFamily="@font/irishgrover_regular"
+            android:text="Orders"
+            android:textAlignment="center"
+            android:textSize="35sp" />
+    </LinearLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/status_orders_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:tabBackground="@color/white"
+        android:fontFamily="@font/inter_font"
+        app:tabIconTint="@color/custom_color"
+        app:tabSelectedTextColor="#F9AE6A"
+        app:tabIndicatorFullWidth="true"
+        app:tabIndicatorColor="#F9AE6A"
+        app:tabTextColor="#9A9A9D"
+        app:tabMode="scrollable"/>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/order_viewpage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

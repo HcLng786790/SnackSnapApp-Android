@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.admin.AdminLoginActivity">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_marginTop="20dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/back"
+        android:layout_gravity="center_horizontal"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SnackSnap"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/irish_font"
+        android:textSize="50sp"
+        android:textColor="@color/black"
+        android:gravity="center"
+        />
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login to Your Admin Dashboard"
+        android:textSize="30sp"
+        android:textAlignment="center"
+        android:textColor="@color/main"
+        android:fontFamily="@font/irishgrover_regular"/>
+
+    <EditText
+        android:id="@+id/edtEmail"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:hint="Email"
+        android:drawableStart="@drawable/icon_mail"
+        android:drawablePadding="20dp"
+        android:layout_marginTop="50dp"
+        android:textSize="27sp"/>
+
+    <EditText
+        android:id="@+id/edtPassword"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:hint="Password"
+        android:drawableStart="@drawable/icon_pass"
+        android:drawablePadding="20dp"
+        android:inputType="textPassword"
+        android:layout_marginTop="46dp"
+        android:textSize="27sp"/>
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:background="@drawable/custom_button"
+        app:backgroundTint="@null"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center"
+        android:textSize="30sp"
+        android:fontFamily="@font/irish_font"/>
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:id="@+id/txtUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login with user "
+        android:fontFamily="@font/irishgrover_regular"
+        android:textSize="25sp"
+        android:textAlignment="center"/>
+</LinearLayout>

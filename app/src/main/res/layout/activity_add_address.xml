@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.AddAddressActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="86dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="15dp">
+
+        <ImageView
+            android:id="@+id/iconBack"
+            android:layout_width="52dp"
+            android:layout_height="76dp"
+            android:paddingStart="15dp"
+            android:src="@drawable/icon_back" />
+
+        <TextView
+            android:id="@+id/txtAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="10"
+            android:fontFamily="@font/irishgrover_regular"
+            android:text="Add new address"
+            android:textAlignment="center"
+            android:textSize="35sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="20dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Location"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:layout_marginTop="50dp"
+            />
+
+        <EditText
+            android:id="@+id/edtLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:padding="10dp"
+            android:background="@drawable/custome_edt_profile"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Name Receiver"
+            android:textStyle="bold"
+            android:layout_marginTop="30dp"
+            android:textSize="20dp"
+            />
+
+        <EditText
+            android:id="@+id/edtNameReceiver"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:background="@drawable/custome_edt_profile"
+            android:padding="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Phone Receiver"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            />
+
+        <EditText
+            android:id="@+id/edtPhoneReveiver"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custome_edt_profile"
+            android:padding="10dp"
+            android:textSize="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Set Defafault Address"
+                android:textStyle="bold"
+                android:layout_weight="3"
+                android:layout_gravity="center"
+                android:textSize="20dp"
+                />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/swCompat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:thumbTint="@null"
+                app:trackTint="@null"
+                android:layout_gravity="center_vertical"
+                android:thumb="@drawable/switch_custome"
+                app:showText="true"
+                app:track="@drawable/track"/>
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/btnCreate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="100dp"
+            android:background="@drawable/custom_btn_order"
+            android:fontFamily="@font/inter_font"
+            android:text="Create"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            app:backgroundTint="@null" />
+    </LinearLayout>
+
+</LinearLayout>

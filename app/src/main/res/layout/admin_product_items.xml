@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layoutProduct"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="20dp"
+    android:layout_margin="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txtType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Food"
+            android:textSize="25sp"
+            android:textStyle="italic"
+            android:textColor="@color/main"
+            android:textAlignment="center"
+            android:layout_marginBottom="10dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/imgFood"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:padding="15dp"
+                android:src="@drawable/food"
+                android:layout_weight="1"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="4"
+                android:gravity="center">
+                <TextView
+                    android:id="@+id/txtFoodName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Salad"
+                    android:textSize="25dp"
+                    android:fontFamily="@font/inter_font"
+                    android:layout_marginTop="20dp"
+                    android:textAlignment="center"/>
+                <TextView
+                    android:id="@+id/txtFoodPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:text="30.000 đ"
+                    android:fontFamily="@font/inter_font"
+                    android:textColor="#F9AE6A"
+                    android:layout_marginBottom="15dp"
+                    android:textAlignment="center"
+                    />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/iconTrash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_trash"
+                android:layout_marginEnd="20dp"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

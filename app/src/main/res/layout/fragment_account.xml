@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".activity.fragmentMain.AccountFragment"
+    android:id="@+id/fragment_ac">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="86dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="15dp">
+
+        <TextView
+            android:id="@+id/txtTitleProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="10"
+            android:fontFamily="@font/irishgrover_regular"
+            android:text="Profile"
+            android:textAlignment="center"
+            android:layout_marginStart="50dp"
+            android:textSize="35sp" />
+
+        <ImageView
+            android:id="@+id/iconOrders"
+            android:layout_width="52dp"
+            android:layout_height="76dp"
+            android:paddingEnd="10dp"
+            android:src="@drawable/icon_order"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="100dp"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Personal details"
+            android:fontFamily="@font/inter_font"
+            android:textStyle="bold"
+            android:layout_marginBottom="30dp"
+            android:textSize="25dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="10dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/cimvAvatar"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/avatar"
+                android:layout_marginEnd="15dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/txtNameUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nguyễn Hữu Đức"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:layout_marginBottom="5dp"/>
+
+
+                <TextView
+                    android:id="@+id/txtEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="mtf072111@gmail.com"
+                    android:textStyle="italic"
+                    android:textSize="20sp"
+                    android:textColor="#888484"
+                    android:layout_margin="5dp"/>
+
+                <TextView
+                    android:id="@+id/txtPhone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0388367703"
+                    android:textStyle="italic"
+                    android:textColor="#888484"
+                    android:textSize="20sp"
+                    android:layout_margin="5dp"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/custom_btn_order"
+            android:fontFamily="@font/inter_font"
+            android:text="Edit Profile"
+            android:textSize="30sp"
+            android:layout_marginTop="50dp"
+            android:textStyle="bold"
+            app:backgroundTint="@null" />
+    </LinearLayout>
+
+</LinearLayout>

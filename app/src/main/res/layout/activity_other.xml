@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/nav"
+    tools:context=".activity.OtherActivity">
+
+  <ImageView
+      android:id="@+id/iconBack"
+      android:layout_width="52dp"
+      android:layout_height="50dp"
+      android:layout_marginTop="15dp"
+      android:layout_marginStart="10dp"
+      android:src="@drawable/icon_back_white" />
+
+  <TextView
+      android:id="@+id/txtProfile"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="36dp"
+      android:layout_marginTop="180dp"
+      android:drawableStart="@drawable/icon_user_white"
+      android:drawablePadding="20dp"
+      android:fontFamily="@font/inter_font"
+      android:text="Profile"
+      android:gravity="center_vertical"
+      android:textColor="@color/white"
+      android:textSize="25sp"
+      android:textStyle="bold" />
+
+  <TextView
+      android:id="@+id/txtCart"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="36dp"
+      android:layout_marginTop="40dp"
+      android:drawableStart="@drawable/icon_cart_white"
+      android:drawablePadding="20dp"
+      android:fontFamily="@font/inter_font"
+      android:text="Cart"
+      android:gravity="center_vertical"
+      android:textColor="@color/white"
+      android:textSize="25sp"
+      android:textStyle="bold" />
+
+  <TextView
+      android:id="@+id/txtChange"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="36dp"
+      android:layout_marginTop="40dp"
+      android:drawableStart="@drawable/icon_paper_white"
+      android:drawablePadding="20dp"
+      android:fontFamily="@font/inter_font"
+      android:text="Change passowrd"
+      android:gravity="center_vertical"
+      android:textColor="@color/white"
+      android:textSize="25sp"
+      android:textStyle="bold" />
+
+  <TextView
+      android:id="@+id/txtSignOut"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Sign-Out"
+      android:textStyle="bold"
+      android:textColor="@color/white"
+      android:textSize="30sp"
+      android:layout_marginStart="36dp"
+      android:layout_marginTop="250dp"
+      android:gravity="center_vertical"
+      android:drawableEnd="@drawable/icon_right_white"
+      android:drawablePadding="20dp"/>
+
+</LinearLayout>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="20dp"
+    android:paddingBottom="20dp">
+
+        <LinearLayout
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+                <TextView
+                    android:id="@+id/txtNameUserItem"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nguyễn Hữu Đức"
+                    android:textStyle="bold"
+                    android:textSize="23sp"
+                    android:layout_marginBottom="10dp"/>
+
+
+                <TextView
+                    android:id="@+id/txtLocationItem"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="9/5 Tân Xuân 4 Huyện Hóc Môn"
+                    android:textStyle="italic"
+                    android:textSize="23sp"
+                    android:layout_marginBottom="10dp"/>
+
+                <TextView
+                    android:id="@+id/txtPhoneItem"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0388367703"
+                    android:textStyle="italic"
+                    android:textSize="23sp"
+                    android:layout_marginBottom="10dp"/>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imvChose"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:src="@drawable/icon_tick"
+            android:visibility="invisible"
+            />
+</LinearLayout>

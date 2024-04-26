@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:background="@drawable/back"
+    tools:context=".activity.VerifyActivity">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SnackSnap"
+        android:fontFamily="@font/irish_font"
+        android:textSize="50sp"
+        android:layout_marginTop="115dp"
+        android:textColor="@color/black"
+        android:gravity="center"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Verify Account"
+        android:fontFamily="@font/inter_font"
+        android:textSize="50sp"
+        android:layout_marginTop="50dp"
+        android:textColor="@color/black"
+        android:gravity="center"
+        />
+
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Check your mail and enter your otp to active account"
+        android:fontFamily="@font/inter_font"
+        android:textSize="30sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:textColor="@color/black"
+        android:gravity="center"
+        />
+    <EditText
+        android:id="@+id/edtOTP"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:hint="OTP"
+        android:inputType="textPassword"
+        android:textAlignment="center"
+        android:layout_marginTop="46dp"
+        android:textSize="27sp"/>
+    <Button
+        android:id="@+id/btnVerify"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Vetify"
+        android:background="@drawable/custom_button"
+        app:backgroundTint="@null"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center"
+        android:textSize="30sp"
+        android:fontFamily="@font/irish_font"/>
+</LinearLayout>

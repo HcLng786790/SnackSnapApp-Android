@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.CheckOutActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="86dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="15dp">
+
+        <ImageView
+            android:id="@+id/iconBack"
+            android:layout_width="52dp"
+            android:layout_height="76dp"
+            android:paddingStart="15dp"
+            android:src="@drawable/icon_back" />
+
+        <TextView
+            android:id="@+id/txtCheckOut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="10"
+            android:fontFamily="@font/irishgrover_regular"
+            android:text="Check Out"
+            android:textAlignment="center"
+            android:textSize="35sp" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delivery"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/inter_font"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="30dp"/>
+
+    <TextView
+        android:id="@+id/txtTitleDetails"
+        android:layout_width="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_height="wrap_content"
+        android:text="Address Details"
+        android:fontFamily="@font/inter_font"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:layout_marginBottom="40dp"/>
+
+    <LinearLayout
+        android:id="@+id/AddressLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/noneAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Please create new address"
+            android:textSize="25dp"
+            android:layout_gravity="center"
+            android:textStyle="italic"
+            android:layout_weight="3"
+            android:visibility="gone"/>
+
+        <LinearLayout
+            android:id="@+id/layout_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="30dp"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:layout_weight="3">
+
+            <TextView
+                android:id="@+id/txtNameUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Duong"
+                android:textStyle="italic"
+                android:textSize="23sp"
+                android:layout_marginBottom="10dp"/>
+
+
+            <TextView
+                android:id="@+id/txtLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tran Thi Boc"
+                android:textStyle="italic"
+                android:textSize="23sp"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/txtPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0388367703"
+                android:textStyle="italic"
+                android:textSize="23sp"
+                android:layout_marginBottom="10dp"/>
+
+        </LinearLayout>
+
+
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="60dp"
+            android:paddingStart="15dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/icon_forward" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_marginTop="50dp"
+        android:id="@+id/txtDeliveryMethod"
+        android:layout_width="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_height="wrap_content"
+        android:text="Delivery Methods"
+        android:fontFamily="@font/inter_font"
+        android:textSize="25sp"
+        android:layout_marginBottom="20dp"/>
+
+    <RadioGroup
+        android:id="@+id/rdGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp">
+
+        <RadioButton
+            android:id="@+id/radioButton1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Door delivery"
+            android:fontFamily="@font/inter_font"
+            android:textSize="23dp"/>
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pick up"
+            android:fontFamily="@font/inter_font"
+            android:textSize="23dp"/>
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="70dp"
+        android:weightSum="2">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total: "
+            android:textSize="30dp"
+            android:layout_marginStart="20dp"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:fontFamily="@font/inter_font" />
+        <TextView
+            android:id="@+id/txtTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/inter_font" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnCheckout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_font"
+        android:text="Complete Order"
+        android:textStyle="bold"
+        android:background="@drawable/custom_btn_order"
+        app:backgroundTint="@null"
+        android:textSize="35dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"/>
+
+</LinearLayout>
