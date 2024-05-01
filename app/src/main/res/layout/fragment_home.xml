@@ -40,17 +40,6 @@
             />
     </LinearLayout>
 
-    <EditText
-        android:id="@+id/edtSearch"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:layout_marginTop="40dp"
-        android:background="@drawable/custome_edittext"
-        android:hint="Search"
-        android:drawableLeft="@drawable/icon_search"
-        android:paddingStart="10dp"
-        android:fontFamily="@font/inter_font"
-        android:drawablePadding="30dp"/>
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/category_layout"

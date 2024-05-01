@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.huuduc.giuaky.R;
 import com.huuduc.giuaky.ThongKeActivity;
+import com.huuduc.giuaky.activity.LoginActivity;
 import com.huuduc.giuaky.data.orders.Orders;
 import com.huuduc.giuaky.retrofit.OrdersApi;
 import com.huuduc.giuaky.retrofit.RetrofitService;
@@ -86,7 +87,8 @@ public class DashboardActivity extends AppCompatActivity {
         lnLogOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(DashboardActivity.this, AdminLoginActivity.class);
+                AdminLoginActivity.token="Bearer ";
+                Intent intent = new Intent(DashboardActivity.this, LoginActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -128,8 +130,6 @@ public class DashboardActivity extends AppCompatActivity {
                     public void onResponse(Call<Long> call, Response<Long> response) {
                         if (response.isSuccessful()) {
                             txtPendingCount.setText(response.body().toString());
-                        }else{
-                            Toast.makeText(DashboardActivity.this,"Không có quyền",Toast.LENGTH_SHORT).show();
                         }
                     }
 

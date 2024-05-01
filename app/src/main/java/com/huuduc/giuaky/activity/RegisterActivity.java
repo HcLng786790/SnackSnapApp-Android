@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.huuduc.giuaky.R;
@@ -25,6 +26,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     private EditText edtEmail, edtPassword, edtRepeat,edtPhoneNumber,edtName;
     private Button btnRegister;
+    private TextView txtLogin;
 
     private ProgressDialog progressDialog;
 
@@ -45,6 +47,13 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 register();
+            }
+        });
+
+        txtLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }
@@ -130,5 +139,6 @@ public class RegisterActivity extends AppCompatActivity {
         btnRegister=findViewById(R.id.btnRegister);
         edtPhoneNumber=findViewById(R.id.edtPhone);
         edtName=findViewById(R.id.edtName);
+        txtLogin=findViewById(R.id.txtLogin);
     }
 }

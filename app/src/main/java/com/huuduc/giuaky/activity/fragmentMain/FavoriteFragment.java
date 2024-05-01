@@ -3,6 +3,7 @@ package com.huuduc.giuaky.activity.fragmentMain;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -37,6 +38,8 @@ public class FavoriteFragment extends Fragment {
     private RecyclerView recyclerViewFavorite;
     private FavoriteAdapter favoriteAdapter;
     private View mView;
+
+    private SearchView searchView;
 
     private List<Product> productList = new ArrayList<>();
 
@@ -88,6 +91,23 @@ public class FavoriteFragment extends Fragment {
 
         //Ánh xạ
         recyclerViewFavorite = mView.findViewById(R.id.rcv_favorite);
+        searchView=mView.findViewById(R.id.searchView);
+
+        // Lắng nghe sự kiện khi người dùng tìm kiếm
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                // Thực hiện tìm kiếm ở tab hiện tại
+                favoriteAdapter.getFilter().filter(query);
+                return true;            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                // Thực hiện tìm kiếm ngay khi người dùng nhập từ khóa tìm kiếm
+                favoriteAdapter.getFilter().filter(newText);
+                return true;
+            }
+        });
 
 //        products = new DSProduct();
 

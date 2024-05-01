@@ -188,14 +188,15 @@
                 android:layout_weight="10"
                 android:textSize="20sp"/>
         </LinearLayout>
+
         <Button
             android:id="@+id/btnCancle"
-            android:layout_width="90dp"
+            android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:layout_marginBottom="20dp"
             app:backgroundTint="@null"
             android:text="Hủy"
-            android:layout_gravity="center"
-            android:textSize="20sp"
+            android:textSize="25sp"
             android:visibility="gone"
             android:background="@drawable/custom_btn_order"
             />

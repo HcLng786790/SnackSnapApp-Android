@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".activity.AddAddressActivity">
 
     <LinearLayout
+        android:id="@+id/txtTitle"
         android:layout_width="match_parent"
         android:layout_height="86dp"
         android:orientation="horizontal"
         android:gravity="center"
-        android:layout_marginTop="15dp">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <ImageView
             android:id="@+id/iconBack"
@@ -34,66 +36,65 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_margin="20dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitle"
+        app:layout_constraintStart_toStartOf="parent">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:text="Location"
-            android:textStyle="bold"
             android:textSize="20dp"
-            android:layout_marginTop="50dp"
-            />
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/edtLocation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:padding="10dp"
-            android:background="@drawable/custome_edt_profile"
             android:layout_marginTop="5dp"
-            android:layout_marginBottom="10dp"/>
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/custome_edt_profile"
+            android:padding="10dp"
+            android:textSize="20dp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Name Receiver"
-            android:textStyle="bold"
             android:layout_marginTop="30dp"
+            android:text="Name Receiver"
             android:textSize="20dp"
-            />
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/edtNameReceiver"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
             android:background="@drawable/custome_edt_profile"
             android:padding="10dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="10dp"/>
+            android:textSize="20dp" />
 
         <TextView
-            android:layout_marginTop="30dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
             android:text="Phone Receiver"
-            android:textStyle="bold"
             android:textSize="20dp"
-            />
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/edtPhoneReveiver"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
             android:background="@drawable/custome_edt_profile"
             android:padding="10dp"
-            android:textSize="20dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="10dp"/>
+            android:textSize="20dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -104,23 +105,22 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Set Defafault Address"
-                android:textStyle="bold"
-                android:layout_weight="3"
                 android:layout_gravity="center"
+                android:layout_weight="3"
+                android:text="Set Defafault Address"
                 android:textSize="20dp"
-                />
+                android:textStyle="bold" />
 
             <androidx.appcompat.widget.SwitchCompat
                 android:id="@+id/swCompat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:thumbTint="@null"
-                app:trackTint="@null"
                 android:layout_gravity="center_vertical"
                 android:thumb="@drawable/switch_custome"
                 app:showText="true"
-                app:track="@drawable/track"/>
+                app:thumbTint="@null"
+                app:track="@drawable/track"
+                app:trackTint="@null" />
         </LinearLayout>
 
 
@@ -129,8 +129,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
             android:layout_marginTop="100dp"
+            android:layout_marginEnd="20dp"
             android:background="@drawable/custom_btn_order"
             android:fontFamily="@font/inter_font"
             android:text="Create"
@@ -139,4 +139,4 @@
             app:backgroundTint="@null" />
     </LinearLayout>
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,6 +7,8 @@ import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -39,10 +41,13 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.FavoriteViewHolder> {
+public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.FavoriteViewHolder>implements Filterable {
 
     private Context context;
     private List<Product> productsFavorite;
+
+    private List<Product> mListProductOld;
+
 
     private ItemClickListener itemClickListener;
 
@@ -56,6 +61,7 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.Favori
         this.context = context;
         this.productsFavorite = products;
         this.itemClickListener = itemClickListener;
+        this.mListProductOld=products;
     }
 
     public void setData(List<Product> list) {
@@ -130,6 +136,39 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.Favori
             return productsFavorite.size();
         }
         return 0;
+    }
+
+    @Override
+    public Filter getFilter() {
+        return new Filter() {
+            @Override
+            protected FilterResults performFiltering(CharSequence constraint) {
+                String seacrh = constraint.toString();
+                if(seacrh.isEmpty()){
+                    productsFavorite=mListProductOld;
+                }else{
+                    List<Product> list = new ArrayList<>();
+                    for (Product product:mListProductOld){
+                        if(product.getName().toLowerCase().contains(seacrh.toLowerCase())){
+                            list.add(product);
+                        }
+                    }
+
+                    productsFavorite=list;
+                }
+
+                FilterResults filterResults = new FilterResults();
+                filterResults.values=productsFavorite;
+
+                return filterResults;
+            }
+
+            @Override
+            protected void publishResults(CharSequence constraint, FilterResults results) {
+                productsFavorite = (List<Product>) results.values;
+                notifyDataSetChanged();
+            }
+        };
     }
 
     public class FavoriteViewHolder extends RecyclerView.ViewHolder {

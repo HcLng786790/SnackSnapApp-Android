@@ -17,6 +17,7 @@ import com.huuduc.giuaky.data.DTO.AuthenDTORequest;
 import com.huuduc.giuaky.data.DTO.AuthenDTOResponse;
 import com.huuduc.giuaky.retrofit.AuthenApi;
 import com.huuduc.giuaky.retrofit.RetrofitService;
+import com.huuduc.giuaky.sharedreferent.TokenManager;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -30,6 +31,8 @@ public class AdminLoginActivity extends AppCompatActivity {
 
     private Intent intent;
 
+    private TokenManager tokenManager;
+
     public static String token ="Bearer ";
 
 
@@ -37,11 +40,13 @@ public class AdminLoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_login);
+        tokenManager = new TokenManager(this);
         setControl();
         setEvent();
     }
 
     private void setEvent() {
+
         txtUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
