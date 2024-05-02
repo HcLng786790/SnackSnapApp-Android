@@ -145,6 +145,11 @@ public class CheckOutActivity extends AppCompatActivity {
 
     private void createOrder() {
 
+        if(address==null){
+            Toast.makeText(CheckOutActivity.this,"Please chose address",Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         if (chose == 0) {
             Toast.makeText(CheckOutActivity.this, "Please chose delivery type", Toast.LENGTH_SHORT).show();
         }else{

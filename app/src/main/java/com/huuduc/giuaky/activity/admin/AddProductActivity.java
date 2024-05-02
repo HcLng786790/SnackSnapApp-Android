@@ -208,7 +208,6 @@ public class AddProductActivity extends AppCompatActivity {
 
     private void createProduct() {
 
-        progressDialog.show();
 
         if (edtNameProduct.getText().toString().equals("")) {
             edtNameProduct.setError("Please enter name product");
@@ -220,6 +219,7 @@ public class AddProductActivity extends AppCompatActivity {
             edtPriceProduct.requestFocus();
             return;
         }
+        progressDialog.show();
 
         Product newProduct = new Product();
         newProduct.setName(edtNameProduct.getText().toString());
@@ -270,10 +270,10 @@ public class AddProductActivity extends AppCompatActivity {
             return;
         }
 
-        if (checkSelfPermission(Manifest.permission.READ_MEDIA_IMAGES) == PackageManager.PERMISSION_GRANTED) {
+        if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
             openGallery();
         } else {
-            String[] permisson = {Manifest.permission.READ_MEDIA_IMAGES};
+            String[] permisson = {Manifest.permission.READ_EXTERNAL_STORAGE};
             requestPermissions(permisson, MY_REQUEST_CODE);
         }
     }
