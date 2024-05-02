@@ -9,13 +9,12 @@
     <LinearLayout
         android:id="@+id/txtTitle"
         android:layout_width="match_parent"
-        android:layout_height="86dp"
+        android:layout_height="80dp"
         android:orientation="horizontal"
         android:gravity="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="15dp">
+        app:layout_constraintEnd_toEndOf="parent">
 
         <ImageView
             android:id="@+id/iconBack"
@@ -80,7 +79,7 @@
             android:background="@drawable/custome_edt_profile"
             android:padding="10dp"
             android:layout_marginTop="5dp"
-            android:layout_marginBottom="10dp"/>
+            android:layout_marginBottom="5dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -112,7 +111,7 @@
             android:id="@+id/imvProduct"
             android:layout_width="200dp"
             android:layout_height="130dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:layout_gravity="center_horizontal"/>
 
         <TextView
@@ -134,7 +133,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="70dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="10dp"
             android:orientation="horizontal">
 
             <TextView

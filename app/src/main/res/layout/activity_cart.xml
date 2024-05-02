@@ -36,7 +36,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcv_cart"
         android:layout_width="match_parent"
-        android:layout_height="544dp"
+        android:layout_height="450dp"
         android:layout_gravity="center"
         android:layout_marginTop="10dp">
 
@@ -56,7 +56,7 @@
             android:fontFamily="@font/inter_font"
             android:text="Total: "
             android:textColor="@color/main"
-            android:textSize="40dp" />
+            android:textSize="35dp" />
 
         <TextView
             android:id="@+id/txtTotal"
@@ -67,7 +67,7 @@
             android:fontFamily="@font/inter_font"
             android:text="300"
             android:textColor="@color/main"
-            android:textSize="40dp" />
+            android:textSize="35dp" />
 
     </LinearLayout>
 

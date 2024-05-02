@@ -45,7 +45,7 @@
         android:drawableStart="@drawable/icon_mail"
         android:drawablePadding="20dp"
         android:layout_marginTop="50dp"
-        android:textSize="27sp"/>
+        android:textSize="20sp"/>
 
     <EditText
         android:id="@+id/edtPassword"
@@ -57,7 +57,7 @@
         android:drawablePadding="20dp"
         android:inputType="textPassword"
         android:layout_marginTop="46dp"
-        android:textSize="27sp"/>
+        android:textSize="20sp"/>
 
     <Button
         android:id="@+id/btnLogin"

@@ -61,7 +61,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Pending"
-                    android:textSize="20sp"
+                    android:textSize="15sp"
                     android:fontFamily="@font/irishgrover_regular"/>
 
                 <TextView
@@ -69,7 +69,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="80"
+                    android:text="0"
                     android:textSize="20sp"
                     android:fontFamily="@font/irishgrover_regular"/>
             </LinearLayout>
@@ -94,7 +94,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Cooking"
-                    android:textSize="20sp"
+                    android:textSize="15sp"
                     android:fontFamily="@font/irishgrover_regular"/>
 
                 <TextView
@@ -102,7 +102,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="80"
+                    android:text="0"
                     android:textSize="20sp"
                     android:fontFamily="@font/irishgrover_regular"/>
             </LinearLayout>
@@ -127,7 +127,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Delivering"
-                    android:textSize="20sp"
+                    android:textSize="15sp"
                     android:fontFamily="@font/irishgrover_regular"/>
 
                 <TextView
@@ -135,7 +135,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="80"
+                    android:text="0"
                     android:textSize="20sp"
                     android:fontFamily="@font/irishgrover_regular"/>
             </LinearLayout>

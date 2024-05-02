@@ -26,7 +26,7 @@
         android:layout_gravity="center"
         android:hint="Email"
         android:layout_marginTop="50dp"
-        android:textSize="27sp"/>
+        android:textSize="20sp"/>
 
     <EditText
         android:id="@+id/edtPassword"
@@ -36,7 +36,7 @@
         android:hint="Password"
         android:inputType="textPassword"
         android:layout_marginTop="46dp"
-        android:textSize="27sp"/>
+        android:textSize="20sp"/>
 
     <Button
         android:id="@+id/btnLogin"
@@ -61,7 +61,7 @@
         android:textAlignment="center"/>
 
     <TextView
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:id="@+id/txtAdminPage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
