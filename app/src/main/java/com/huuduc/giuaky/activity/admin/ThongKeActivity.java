@@ -1,10 +1,11 @@
-package com.huuduc.giuaky;
+package com.huuduc.giuaky.activity.admin;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.mikephil.charting.charts.PieChart;
@@ -13,7 +14,9 @@ import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.formatter.PercentFormatter;
 import com.github.mikephil.charting.utils.ColorTemplate;
+import com.huuduc.giuaky.R;
 import com.huuduc.giuaky.data.ThongKe;
+import com.huuduc.giuaky.retrofit.OrdersApi;
 import com.huuduc.giuaky.retrofit.ProductApi;
 import com.huuduc.giuaky.retrofit.RetrofitService;
 
@@ -29,6 +32,7 @@ public class ThongKeActivity extends AppCompatActivity {
     private Toolbar toolbar;
 
     private PieChart pieChart;
+    private TextView txtRevenue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +40,27 @@ public class ThongKeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_thong_ke);
         setControl();
         actionToolBar();
+        getRevenue();
         getDataChart();
+    }
+
+    private void getRevenue() {
+        RetrofitService retrofitService = new RetrofitService();
+        OrdersApi ordersApi =retrofitService.getRetrofit().create(OrdersApi.class);
+        ordersApi.getRevenue(AdminLoginActivity.token)
+                .enqueue(new Callback<Long>() {
+                    @Override
+                    public void onResponse(Call<Long> call, Response<Long> response) {
+                        if (response.isSuccessful()){
+                            txtRevenue.setText(response.body()+" Đ");
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<Long> call, Throwable t) {
+                        Toast.makeText(ThongKeActivity.this,"API error",Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 
     private void getDataChart() {
@@ -96,5 +120,6 @@ public class ThongKeActivity extends AppCompatActivity {
     private void setControl() {
         toolbar = findViewById(R.id.toolBar);
         pieChart = findViewById(R.id.pieChart);
+        txtRevenue=findViewById(R.id.txtRevenue);
     }
 }

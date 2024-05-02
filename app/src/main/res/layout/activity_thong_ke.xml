@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context=".ThongKeActivity">
+    tools:context=".activity.admin.ThongKeActivity">
 
 
     <androidx.appcompat.widget.Toolbar
@@ -16,6 +16,29 @@
         android:layout_height="wrap_content">
 
     </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_revenue"
+            android:layout_margin="10dp"/>
+
+        <TextView
+            android:id="@+id/txtRevenue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 Đ"
+            android:textSize="35sp"
+            android:textColor="@color/main"
+            android:layout_margin="10dp"/>
+
+    </LinearLayout>
 
     <com.github.mikephil.charting.charts.PieChart
         android:id="@+id/pieChart"

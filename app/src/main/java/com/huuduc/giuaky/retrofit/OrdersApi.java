@@ -44,6 +44,9 @@ public interface OrdersApi {
     Call<Long> getCount(@Header("Authorization") String token,
                         @Path("statusId") long statusId);
 
+    @GET("/orders/revenue")
+    Call<Long> getRevenue(@Header("Authorization") String token);
+
     @PUT("/orders/admin/cancel/{ordersId}")
     Call<Orders> cancelOrdersByAdmin(@Header("Authorization") String token
             ,@Path("ordersId") long ordersId);

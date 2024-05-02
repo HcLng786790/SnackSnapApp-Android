@@ -11,7 +11,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.huuduc.giuaky.R;
-import com.huuduc.giuaky.ThongKeActivity;
 import com.huuduc.giuaky.activity.LoginActivity;
 import com.huuduc.giuaky.data.orders.Orders;
 import com.huuduc.giuaky.retrofit.OrdersApi;
@@ -24,7 +23,7 @@ import retrofit2.Response;
 public class DashboardActivity extends AppCompatActivity {
 
     private ImageView iconAdd;
-    private LinearLayout lnPending,lnCooking,lnDeli,lnUsers,lnGetAll,lnLogOut,lnThongKe;
+    private LinearLayout lnPending,lnCooking,lnDeli,lnUsers,lnGetAll,lnLogOut,lnThongKe,lnOrdersSuccess;
 
     private TextView txtPendingCount,txtCookingCount,txtDeliCount;
     @Override
@@ -102,6 +101,14 @@ public class DashboardActivity extends AppCompatActivity {
             }
         });
 
+        lnOrdersSuccess.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DashboardActivity.this, SuccessActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
     }
 
@@ -117,6 +124,7 @@ public class DashboardActivity extends AppCompatActivity {
         txtDeliCount = findViewById(R.id.txtDeliCount);
         lnLogOut=findViewById(R.id.lnLogOut);
         lnThongKe=findViewById(R.id.lnThongKe);
+        lnOrdersSuccess=findViewById(R.id.lnOrdersSuccess);
 
         loadCount();
     }
