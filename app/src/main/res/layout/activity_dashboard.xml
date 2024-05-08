@@ -1,336 +1,395 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
+    android:id="@+id/refresh"
     android:layout_height="match_parent"
     tools:context=".activity.admin.DashboardActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_margin="20dp"
-            android:src="@drawable/back"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Snack Snap"
-            android:textSize="50sp"
-            android:fontFamily="@font/irishgrover_regular"
-            android:layout_gravity="center"/>
-    </LinearLayout>
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="15dp"
-        android:layout_margin="20dp">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:layout_margin="10dp"
-            android:weightSum="3">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_margin="20dp"
+                android:src="@drawable/back" />
 
-            <LinearLayout
-                android:id="@+id/lnPending"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_marginEnd="20dp"
-                android:layout_weight="1"
-                android:gravity="center_horizontal">
-
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginTop="10dp"
-                    android:src="@drawable/icon_wait_2"/>
-
-                <TextView
-                    android:layout_marginTop="10dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Pending"
-                    android:textSize="15sp"
-                    android:fontFamily="@font/irishgrover_regular"/>
-
-                <TextView
-                    android:id="@+id/txtPendingCount"
-                    android:layout_marginTop="10dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0"
-                    android:textSize="20sp"
-                    android:fontFamily="@font/irishgrover_regular"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/lnCook"
-                android:layout_weight="1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_marginEnd="20dp"
-                android:gravity="center_horizontal">
-
-                <ImageView
-                    android:layout_marginTop="10dp"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/icon_cooking"/>
-
-                <TextView
-                    android:layout_marginTop="10dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Cooking"
-                    android:textSize="15sp"
-                    android:fontFamily="@font/irishgrover_regular"/>
-
-                <TextView
-                    android:id="@+id/txtCookingCount"
-                    android:layout_marginTop="10dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0"
-                    android:textSize="20sp"
-                    android:fontFamily="@font/irishgrover_regular"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/lnDeli"
-                android:layout_weight="1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_marginEnd="20dp"
-                android:gravity="center_horizontal">
-
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/icon_delivery"
-                    android:layout_marginTop="10dp"/>
-
-                <TextView
-                    android:layout_marginTop="10dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Delivering"
-                    android:textSize="15sp"
-                    android:fontFamily="@font/irishgrover_regular"/>
-
-                <TextView
-                    android:id="@+id/txtDeliCount"
-                    android:layout_marginTop="10dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0"
-                    android:textSize="20sp"
-                    android:fontFamily="@font/irishgrover_regular"/>
-            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/irishgrover_regular"
+                android:text="Snack Snap"
+                android:textSize="50sp" />
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
 
         <androidx.cardview.widget.CardView
-            android:layout_margin="30dp"
-            android:layout_width="150dp"
-            android:layout_height="100dp"
-            app:cardCornerRadius="30dp"
-            android:outlineAmbientShadowColor="@color/main"
-            android:background="@color/main"
-            android:backgroundTint="@null">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            app:cardCornerRadius="15dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+
+                <LinearLayout
+                    android:id="@+id/lnPending"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/icon_wait_2" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/irishgrover_regular"
+                        android:text="Pending"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/txtPendingCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/irishgrover_regular"
+                        android:text="0"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lnCook"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/icon_cooking" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/irishgrover_regular"
+                        android:text="Cooking"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/txtCookingCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/irishgrover_regular"
+                        android:text="0"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lnDeli"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/icon_delivery" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/irishgrover_regular"
+                        android:text="Delivering"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/txtDeliCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/irishgrover_regular"
+                        android:text="0"
+                        android:textSize="20sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/changecolor"
-                android:orientation="vertical"
-                android:gravity="center">
+                android:orientation="vertical">
 
-                <ImageView
-                    android:id="@+id/iconAdd"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/icon_plus"/>
-
-                <TextView
-                    android:layout_width="100dp"
-                    android:textAlignment="center"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Add new product"
-                    android:textSize="20sp"
-                    android:fontFamily="@font/irishgrover_regular"/>
+                    android:orientation="horizontal">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="150dp"
+                        android:layout_height="100dp"
+                        android:layout_margin="30dp"
+                        android:background="@color/main"
+                        android:backgroundTint="@null"
+                        android:outlineAmbientShadowColor="@color/main"
+                        app:cardCornerRadius="30dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/changecolor"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/iconAdd"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:src="@drawable/icon_plus" />
+
+                            <TextView
+                                android:layout_width="100dp"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/irishgrover_regular"
+                                android:text="Add new product"
+                                android:textAlignment="center"
+                                android:textSize="20sp" />
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="150dp"
+                        android:layout_height="100dp"
+                        android:layout_margin="30dp"
+                        android:background="@color/main"
+                        android:backgroundTint="@null"
+                        android:outlineAmbientShadowColor="@color/main"
+                        app:cardCornerRadius="30dp">
+
+                        <LinearLayout
+                            android:id="@+id/lnGetAll"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/changecolor"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+
+                            <TextView
+                                android:layout_width="100dp"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/irishgrover_regular"
+                                android:text="All product"
+                                android:textAlignment="center"
+                                android:textSize="20sp" />
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="150dp"
+                        android:layout_height="100dp"
+                        android:layout_margin="30dp"
+                        android:background="@color/main"
+                        android:backgroundTint="@null"
+                        android:outlineAmbientShadowColor="@color/main"
+                        app:cardCornerRadius="30dp">
+
+                        <LinearLayout
+                            android:id="@+id/lnThongKe"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/changecolor"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="100dp"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/irishgrover_regular"
+                                android:text="Thống Kê"
+                                android:textAlignment="center"
+                                android:textSize="20sp" />
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="150dp"
+                        android:layout_height="100dp"
+                        android:layout_margin="30dp"
+                        android:background="@color/main"
+                        android:backgroundTint="@null"
+                        android:outlineAmbientShadowColor="@color/main"
+                        app:cardCornerRadius="30dp">
+
+                        <LinearLayout
+                            android:id="@+id/lnUsers"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/changecolor"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="100dp"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/irishgrover_regular"
+                                android:text="All user"
+                                android:textAlignment="center"
+                                android:textSize="20sp" />
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="150dp"
+                        android:layout_height="100dp"
+                        android:layout_margin="30dp"
+                        android:background="@color/main"
+                        android:backgroundTint="@null"
+                        android:outlineAmbientShadowColor="@color/main"
+                        app:cardCornerRadius="30dp">
+
+                        <LinearLayout
+                            android:id="@+id/lnOrdersSuccess"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/changecolor"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+
+                            <TextView
+                                android:layout_width="100dp"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/irishgrover_regular"
+                                android:text="Order success"
+                                android:textAlignment="center"
+                                android:textSize="20sp" />
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="150dp"
+                        android:layout_height="100dp"
+                        android:layout_margin="30dp"
+                        android:background="@color/main"
+                        android:backgroundTint="@null"
+                        android:outlineAmbientShadowColor="@color/main"
+                        app:cardCornerRadius="30dp">
+
+                        <LinearLayout
+                            android:id="@+id/lnLogOut"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/changecolor"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="100dp"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/irishgrover_regular"
+                                android:text="Log out"
+                                android:textAlignment="center"
+                                android:textSize="20sp" />
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="150dp"
+                        android:layout_height="100dp"
+                        android:layout_margin="30dp"
+                        android:background="@color/main"
+                        android:backgroundTint="@null"
+                        android:outlineAmbientShadowColor="@color/main"
+                        app:cardCornerRadius="30dp">
+
+                        <LinearLayout
+                            android:id="@+id/lnPromotion"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/changecolor"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+
+                            <TextView
+                                android:layout_width="100dp"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/irishgrover_regular"
+                                android:text="Promotion"
+                                android:textAlignment="center"
+                                android:textSize="20sp" />
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
             </LinearLayout>
 
-        </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView
-            android:layout_margin="30dp"
-            android:layout_width="150dp"
-            android:layout_height="100dp"
-            app:cardCornerRadius="30dp"
-            android:outlineAmbientShadowColor="@color/main"
-            android:background="@color/main"
-            android:backgroundTint="@null">
-
-            <LinearLayout
-                android:id="@+id/lnGetAll"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/changecolor"
-                android:orientation="vertical"
-                android:gravity="center">
-
-
-                <TextView
-                    android:layout_width="100dp"
-                    android:textAlignment="center"
-                    android:layout_height="wrap_content"
-                    android:text="All product"
-                    android:textSize="20sp"
-                    android:fontFamily="@font/irishgrover_regular"/>
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
+        </ScrollView>
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
 
-        <androidx.cardview.widget.CardView
-            android:layout_margin="30dp"
-            android:layout_width="150dp"
-            android:layout_height="100dp"
-            app:cardCornerRadius="30dp"
-            android:outlineAmbientShadowColor="@color/main"
-            android:background="@color/main"
-            android:backgroundTint="@null">
-
-            <LinearLayout
-                android:id="@+id/lnThongKe"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/changecolor"
-                android:orientation="vertical"
-                android:gravity="center">
-
-                <TextView
-                    android:layout_width="100dp"
-                    android:textAlignment="center"
-                    android:layout_height="wrap_content"
-                    android:text="Thống Kê"
-                    android:textSize="20sp"
-                    android:fontFamily="@font/irishgrover_regular"/>
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_margin="30dp"
-            android:layout_width="150dp"
-            android:layout_height="100dp"
-            app:cardCornerRadius="30dp"
-            android:outlineAmbientShadowColor="@color/main"
-            android:background="@color/main"
-            android:backgroundTint="@null">
-
-            <LinearLayout
-                android:id="@+id/lnUsers"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/changecolor"
-                android:orientation="vertical"
-                android:gravity="center">
-
-                <TextView
-                    android:layout_width="100dp"
-                    android:textAlignment="center"
-                    android:layout_height="wrap_content"
-                    android:text="All user"
-                    android:textSize="20sp"
-                    android:fontFamily="@font/irishgrover_regular"/>
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <androidx.cardview.widget.CardView
-            android:layout_margin="30dp"
-            android:layout_width="150dp"
-            android:layout_height="100dp"
-            app:cardCornerRadius="30dp"
-            android:outlineAmbientShadowColor="@color/main"
-            android:background="@color/main"
-            android:backgroundTint="@null">
-
-            <LinearLayout
-                android:id="@+id/lnOrdersSuccess"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/changecolor"
-                android:orientation="vertical"
-                android:gravity="center">
-
-
-                <TextView
-                    android:layout_width="100dp"
-                    android:textAlignment="center"
-                    android:layout_height="wrap_content"
-                    android:text="Order success"
-                    android:textSize="20sp"
-                    android:fontFamily="@font/irishgrover_regular"/>
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_margin="30dp"
-            android:layout_width="150dp"
-            android:layout_height="100dp"
-            app:cardCornerRadius="30dp"
-            android:outlineAmbientShadowColor="@color/main"
-            android:background="@color/main"
-            android:backgroundTint="@null">
-
-            <LinearLayout
-                android:id="@+id/lnLogOut"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/changecolor"
-                android:orientation="vertical"
-                android:gravity="center">
-
-                <TextView
-                    android:layout_width="100dp"
-                    android:textAlignment="center"
-                    android:layout_height="wrap_content"
-                    android:text="Log out"
-                    android:textSize="20sp"
-                    android:fontFamily="@font/irishgrover_regular"/>
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-    </LinearLayout>
-</LinearLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

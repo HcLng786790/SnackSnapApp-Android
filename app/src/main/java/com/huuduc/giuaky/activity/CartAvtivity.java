@@ -1,9 +1,11 @@
 package com.huuduc.giuaky.activity;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -14,7 +16,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.huuduc.giuaky.R;
+import com.huuduc.giuaky.ShowPromotionActivity;
 import com.huuduc.giuaky.adapter.CartAdapter;
+import com.huuduc.giuaky.data.Promotion;
+import com.huuduc.giuaky.data.address.Address;
 import com.huuduc.giuaky.data.cart.Cart;
 import com.huuduc.giuaky.data.cart.CartWr;
 import com.huuduc.giuaky.repo.DSProduct;
@@ -36,7 +41,9 @@ public class CartAvtivity extends AppCompatActivity {
     private RecyclerView rcvCart;
     private CartAdapter cartAdapter;
     private Button btnOrder;
-    static TextView txtTotal, txt_quantity;
+
+    private Promotion promotion;
+    static TextView txtTotal, txt_quantity, txtDiscount;
     public CartWr cartWr;
 
     @Override
@@ -78,12 +85,20 @@ public class CartAvtivity extends AppCompatActivity {
                                 cartAdapter.setData(cartWr.getCartDetailsDTOResponseList());
                             }
                             rcvCart.setAdapter(cartAdapter);
+
+                            if(promotion!=null){
+                                if(cartWr.getTotalPrice()> promotion.getDiscount()) {
+                                    cartWr.setTotalPrice(cartWr.getTotalPrice() - promotion.getDiscount());
+                                }else{
+                                    cartWr.setTotalPrice(0);
+                                }
+                            }
                             DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
                             txtTotal.setText(decimalFormat.format(cartWr.getTotalPrice()) + "Đ");
 
-                            if(cartWr.getCartDetailsDTOResponseList().size()==0){
+                            if (cartWr.getCartDetailsDTOResponseList().size() == 0) {
                                 btnOrder.setBackgroundColor(Color.GRAY);
-                            }else{
+                            } else {
                                 gotoCheckOut();
                             }
                         }
@@ -103,6 +118,7 @@ public class CartAvtivity extends AppCompatActivity {
                 Intent intent = new Intent(CartAvtivity.this, CheckOutActivity.class);
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("obj_cartWr", cartWr);
+                bundle.putSerializable("obj_promotion",promotion);
                 intent.putExtras(bundle);
                 startActivity(intent);
             }
@@ -116,6 +132,7 @@ public class CartAvtivity extends AppCompatActivity {
         txtTotal = findViewById(R.id.txtTotal);
         txt_quantity = findViewById(R.id.txt_quantity);
         btnOrder = findViewById(R.id.btnOrder);
+        txtDiscount = findViewById(R.id.txtDiscount);
     }
 
     public void setEvent() {
@@ -125,6 +142,31 @@ public class CartAvtivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        txtDiscount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CartAvtivity.this, ShowPromotionActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("promotion", promotion);
+                intent.putExtras(bundle);
+                startActivityForResult(intent, 99);
+            }
+        });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 99 && resultCode == Activity.RESULT_OK && data != null) {
+            Bundle bundle = data.getExtras();
+            if (bundle == null) {
+                return;
+            }
+            promotion = (Promotion) bundle.get("chose");
+            txtDiscount.setText("-" + promotion.getDiscount() + "K");
+
+        }
     }
 
     @Override

@@ -27,12 +27,6 @@
             android:text="SnackSnap"
             android:textAlignment="center"
             android:textSize="35sp" />
-        <ImageView
-            android:id="@+id/imbtnFavo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/icon_heart"
-            android:layout_marginEnd="20dp"/>
     </LinearLayout>
 
     <ImageView

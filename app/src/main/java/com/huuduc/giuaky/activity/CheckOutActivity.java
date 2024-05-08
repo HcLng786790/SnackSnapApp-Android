@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.huuduc.giuaky.R;
+import com.huuduc.giuaky.data.Promotion;
 import com.huuduc.giuaky.data.address.Address;
 import com.huuduc.giuaky.data.cart.CartWr;
 import com.huuduc.giuaky.data.orders.Orders;
@@ -32,6 +33,8 @@ public class CheckOutActivity extends AppCompatActivity {
     public static final int RADIO_BUTTON_2 = R.id.radioButton2;
 
     private int chose = 0;
+
+    private Promotion promotion;
 
     private ImageView iconBack;
     private TextView txtTotal, txtNameUser, txtLocation, txtPhone, noneAddress;
@@ -90,8 +93,10 @@ public class CheckOutActivity extends AppCompatActivity {
         cartWr = (CartWr) bundle.get("obj_cartWr");
 
         if (cartWr != null) {
-            txtTotal.setText(String.format("%s", cartWr.getTotalPrice()));
+            txtTotal.setText(cartWr.getTotalPrice() + " Đ ");
         }
+
+        promotion = (Promotion) bundle.get("obj_promotion");
 
     }
 
@@ -136,26 +141,58 @@ public class CheckOutActivity extends AppCompatActivity {
         btnCheckout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                createOrder();
+                if (promotion != null) {
+                    createOrderWithPromotion();
+                } else {
+                    createOrder();
+                }
             }
         });
 
 
     }
 
-    private void createOrder() {
-
-        if(address==null){
-            Toast.makeText(CheckOutActivity.this,"Please chose address",Toast.LENGTH_SHORT).show();
+    private void createOrderWithPromotion() {
+        if (address == null) {
+            Toast.makeText(CheckOutActivity.this, "Please chose address", Toast.LENGTH_SHORT).show();
             return;
         }
 
         if (chose == 0) {
             Toast.makeText(CheckOutActivity.this, "Please chose delivery type", Toast.LENGTH_SHORT).show();
-        }else{
+        } else {
             RetrofitService retrofitService = new RetrofitService();
             OrdersApi ordersApi = retrofitService.getRetrofit().create(OrdersApi.class);
-            ordersApi.orders(MainActivity.user.getId(),chose,address.getId())
+            ordersApi.orders3(MainActivity.user.getId(),chose, address.getId(), promotion.getId())
+                    .enqueue(new Callback<Orders>() {
+                        @Override
+                        public void onResponse(Call<Orders> call, Response<Orders> response) {
+                            Toast.makeText(CheckOutActivity.this, "Orders sucess and check in profile", Toast.LENGTH_SHORT).show();
+                            finish();
+                        }
+
+                        @Override
+                        public void onFailure(Call<Orders> call, Throwable t) {
+                            Toast.makeText(CheckOutActivity.this, "Call api error", Toast.LENGTH_SHORT).show();
+
+                        }
+                    });
+        }
+    }
+
+    private void createOrder() {
+
+        if (address == null) {
+            Toast.makeText(CheckOutActivity.this, "Please chose address", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (chose == 0) {
+            Toast.makeText(CheckOutActivity.this, "Please chose delivery type", Toast.LENGTH_SHORT).show();
+        } else {
+            RetrofitService retrofitService = new RetrofitService();
+            OrdersApi ordersApi = retrofitService.getRetrofit().create(OrdersApi.class);
+            ordersApi.orders(MainActivity.user.getId(), chose, address.getId())
                     .enqueue(new Callback<Orders>() {
                         @Override
                         public void onResponse(Call<Orders> call, Response<Orders> response) {

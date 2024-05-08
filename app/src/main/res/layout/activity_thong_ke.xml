@@ -43,6 +43,26 @@
     <com.github.mikephil.charting.charts.PieChart
         android:id="@+id/pieChart"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="450dp"/>
+
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/barChart"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="450dp"/>
+
+    <Button
+        android:id="@+id/btnPdf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/custom_btn_order"
+        android:fontFamily="@font/inter_font"
+        android:text="Generate PDF File"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:backgroundTint="@null" />
 
 </LinearLayout>

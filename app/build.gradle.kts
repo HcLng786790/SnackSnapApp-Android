@@ -40,6 +40,12 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.11.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+// https://mvnrepository.com/artifact/androidx.core/core
+    implementation ("androidx.core:core:1.13.0")
+    // https://mvnrepository.com/artifact/com.itextpdf/itextpdf
+    implementation ("com.itextpdf:itextpdf:5.5.13.3")
+    implementation ("androidx.swiperefreshlayout:swiperefreshlayout:1.2.0-alpha01")
+
 
     implementation("com.android.volley:volley:1.2.1")
     // https://mvnrepository.com/artifact/com.squareup.retrofit2/retrofit

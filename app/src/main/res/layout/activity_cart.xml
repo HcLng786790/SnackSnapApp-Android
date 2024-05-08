@@ -36,11 +36,38 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcv_cart"
         android:layout_width="match_parent"
-        android:layout_height="450dp"
+        android:layout_height="420dp"
         android:layout_gravity="center"
         android:layout_marginTop="10dp">
 
     </androidx.recyclerview.widget.RecyclerView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Voucher"
+            android:textColor="@color/main"
+            android:textSize="20dp"
+            android:layout_weight="2"
+            android:gravity="center_vertical"
+            android:drawableStart="@drawable/icon_promotion"
+            android:drawablePadding="10dp"/>
+
+        <TextView
+            android:id="@+id/txtDiscount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chose"
+            android:textColor="#8F877F"
+            android:textSize="20dp"
+            android:layout_weight="1"
+            android:gravity="center"/>
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -65,7 +92,7 @@
             android:layout_marginEnd="20dp"
             android:layout_weight="1"
             android:fontFamily="@font/inter_font"
-            android:text="300"
+            android:text="0"
             android:textColor="@color/main"
             android:textSize="35dp" />
 

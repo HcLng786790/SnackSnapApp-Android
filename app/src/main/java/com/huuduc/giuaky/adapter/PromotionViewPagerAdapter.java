@@ -8,20 +8,19 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class OrderViewPagerAdapter extends FragmentStateAdapter {
-
+public class PromotionViewPagerAdapter extends FragmentStateAdapter {
     private List<Fragment> fragmentList = new ArrayList<>();
 
-    public OrderViewPagerAdapter(@NonNull FragmentActivity fragmentActivity, List<Fragment> fragmentList) {
+    public PromotionViewPagerAdapter(@NonNull FragmentActivity fragmentActivity,List<Fragment> fragmentList) {
         super(fragmentActivity);
         this.fragmentList = fragmentList;
+
     }
 
     @NonNull
     @Override
     public Fragment createFragment(int position) {
         return fragmentList.get(position);
-
     }
 
     @Override

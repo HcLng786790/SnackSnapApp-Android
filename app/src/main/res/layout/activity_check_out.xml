@@ -169,16 +169,17 @@
             android:layout_weight="1"
             android:textStyle="bold"
             android:fontFamily="@font/inter_font" />
+
         <TextView
             android:id="@+id/txtTotal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/inter_font"
             android:text="0"
             android:textSize="30dp"
-            android:textStyle="bold"
-            android:layout_weight="1"
-            android:layout_marginEnd="20dp"
-            android:fontFamily="@font/inter_font" />
+            android:textStyle="bold" />
 
     </LinearLayout>
 

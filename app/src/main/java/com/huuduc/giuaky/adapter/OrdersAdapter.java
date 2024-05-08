@@ -36,9 +36,8 @@ public class OrdersAdapter extends RecyclerView.Adapter<OrdersAdapter.OrdersView
 
     private List<Orders> mOrdersList;
 
-    private ItemClickListener itemClickListener;
-
     private OrdersClickListener ordersClickListener;
+
     public OrdersAdapter(Context context,List<Orders> dsOrders,OrdersClickListener ordersClickListener){
         this.context=context;
         this.mOrdersList=dsOrders;

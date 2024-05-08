@@ -1,17 +1,22 @@
 package com.huuduc.giuaky.activity.admin;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.huuduc.giuaky.PromotionActivity;
 import com.huuduc.giuaky.R;
 import com.huuduc.giuaky.activity.LoginActivity;
+import com.huuduc.giuaky.activity.ProfileActivity;
 import com.huuduc.giuaky.data.orders.Orders;
 import com.huuduc.giuaky.retrofit.OrdersApi;
 import com.huuduc.giuaky.retrofit.RetrofitService;
@@ -20,12 +25,14 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class DashboardActivity extends AppCompatActivity {
+public class DashboardActivity extends AppCompatActivity implements SwipeRefreshLayout.OnRefreshListener{
 
     private ImageView iconAdd;
-    private LinearLayout lnPending,lnCooking,lnDeli,lnUsers,lnGetAll,lnLogOut,lnThongKe,lnOrdersSuccess;
+    private LinearLayout lnPending,lnCooking,lnDeli,lnUsers,lnGetAll,lnLogOut,lnThongKe,lnOrdersSuccess,lnPromotion;
 
     private TextView txtPendingCount,txtCookingCount,txtDeliCount;
+
+    private SwipeRefreshLayout refreshLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -109,6 +116,14 @@ public class DashboardActivity extends AppCompatActivity {
             }
         });
 
+        lnPromotion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DashboardActivity.this, PromotionActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
     }
 
@@ -125,6 +140,8 @@ public class DashboardActivity extends AppCompatActivity {
         lnLogOut=findViewById(R.id.lnLogOut);
         lnThongKe=findViewById(R.id.lnThongKe);
         lnOrdersSuccess=findViewById(R.id.lnOrdersSuccess);
+        lnPromotion=findViewById(R.id.lnPromotion);
+        refreshLayout=findViewById(R.id.refresh);
 
         loadCount();
     }
@@ -180,11 +197,23 @@ public class DashboardActivity extends AppCompatActivity {
 
                     }
                 });
+        refreshLayout.setOnRefreshListener(this);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         loadCount();
+    }
+
+    @Override
+    public void onRefresh() {
+        loadCount();
+        new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                refreshLayout.setRefreshing(false);
+            }
+        },2000);
     }
 }

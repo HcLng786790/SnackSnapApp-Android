@@ -1,5 +1,6 @@
 package com.huuduc.giuaky.retrofit;
 
+import com.huuduc.giuaky.data.DoanhThu;
 import com.huuduc.giuaky.data.orders.Orders;
 
 import java.util.List;
@@ -22,6 +23,12 @@ public interface OrdersApi {
                         @Query("type") int type,
                         @Query("addressId") long addressId);
 
+
+    @POST("/orders/addNew3")
+    Call<Orders> orders3(@Query("userId") long userId,
+                        @Query("type") int type,
+                        @Query("addressId") long addressId,
+                        @Query("promotionId") long promotionId);
 
     @GET("/orders/status")
     Call<List<Orders>> getAllByStatus(@Query("statusId") long statusId,
@@ -50,4 +57,7 @@ public interface OrdersApi {
     @PUT("/orders/admin/cancel/{ordersId}")
     Call<Orders> cancelOrdersByAdmin(@Header("Authorization") String token
             ,@Path("ordersId") long ordersId);
+
+    @GET("/orders/getDoanhThu")
+    Call<List<DoanhThu>> getDoanhThu();
 }
