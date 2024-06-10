@@ -132,7 +132,7 @@ public class LoginActivity extends AppCompatActivity {
                                     intent = new Intent(LoginActivity.this, MainActivity.class);
                                     startActivity(intent);
                                 }else{
-                                    Toast.makeText(LoginActivity.this, "Sai thong tin", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(LoginActivity.this, "Sai thông tin", Toast.LENGTH_SHORT).show();
                                 }
                             }
 

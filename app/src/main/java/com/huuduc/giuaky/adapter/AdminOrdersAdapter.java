@@ -62,6 +62,7 @@ public class AdminOrdersAdapter extends RecyclerView.Adapter<AdminOrdersAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull AdminOrdersViewHolder holder, int position) {
+
         Orders orders = mOrdersList.get(position);
 
         if (orders == null) {

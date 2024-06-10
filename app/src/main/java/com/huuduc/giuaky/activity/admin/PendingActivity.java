@@ -84,6 +84,7 @@ public class PendingActivity extends AppCompatActivity {
                 onClickToDetail(orders);
             }
         });
+
         rcvPending.setAdapter(adapter);
     }
 

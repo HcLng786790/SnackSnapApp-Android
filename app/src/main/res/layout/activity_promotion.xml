@@ -42,8 +42,7 @@
         app:tabSelectedTextColor="#F9AE6A"
         app:tabIndicatorFullWidth="true"
         app:tabIndicatorColor="#F9AE6A"
-        app:tabTextColor="#9A9A9D"
-        app:tabMode="scrollable"/>
+        app:tabTextColor="#9A9A9D" />
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/promotion_viewpager"

@@ -265,7 +265,6 @@ public class ThongKeActivity extends AppCompatActivity {
                     @Override
                     public void onFailure(Call<List<ThongKe>> call, Throwable t) {
                         Toast.makeText(ThongKeActivity.this,"API error",Toast.LENGTH_SHORT).show();
-
                     }
                 });
 
